@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-building="interweave">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b2e4a">
+  <meta name="description" content="Glitchwayve — CIIT student dashboard">
+  <title>Glitchwayve | CIIT Student Dashboard</title>
+
+  <!-- Web font and icons are loaded from CDNs. The app itself uses plain HTML, CSS and JavaScript. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- The login screen is shown until Supabase confirms a signed-in user. -->
+  <section id="loginScreen" class="login-screen" aria-labelledby="loginTitle"></section>
+
+  <!-- The dashboard shell is revealed after successful authentication. -->
+  <div id="dashboard" class="dashboard" hidden>
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation"></aside>
+
+    <div class="dashboard-column">
+      <header id="topbar" class="topbar"></header>
+      <main id="mainContent" class="main-content" tabindex="-1"></main>
+      <footer class="site-footer">
+        <span>Glitchwayve · CIIT Student Dashboard</span>
+        <span>Student information is loaded from your Supabase project.</span>
+      </footer>
+    </div>
+
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation"></nav>
+  </div>
+
+  <!-- JavaScript places dialogs and toast messages in these containers. -->
+  <div id="dialogRoot"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
